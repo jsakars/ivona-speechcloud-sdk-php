@@ -29,7 +29,7 @@ abstract class Base
     /**
      * @return string
      */
-    public function json()
+    public function toJson()
     {
         return json_encode($this);
     }

@@ -58,6 +58,8 @@ class SpeechCloud implements SpeechCloudInterface
     }
 
     /**
+     * Performs a synthesis of the requested text to the audio stream containing the speech
+     *
      * @param Input        $input
      * @param OutputFormat $outputFormat
      * @param Parameters   $parameters
@@ -85,13 +87,15 @@ class SpeechCloud implements SpeechCloudInterface
     }
 
     /**
+     * Returns a list of TTS voices available for speech synthesis
+     *
      * @param Voice $voice
      * @return null|string
      */
     public function listVoices(Voice $voice)
     {
         try {
-            $response = $this->getResponse('POST', '/ListVoices', $voice->json());
+            $response = $this->getResponse('POST', '/ListVoices', $voice->toJson());
             if ($response->getStatusCode() === 200) {
                 return $response->getBody()->getContents();
             }
@@ -101,41 +105,87 @@ class SpeechCloud implements SpeechCloudInterface
     }
 
     /**
+     * Create a lexicon that can later be used during synthesis
+     *
      * @param Lexicon $lexicon
+     * @return bool
      */
     public function putLexicon(Lexicon $lexicon)
     {
-        // TODO: implement
+        try {
+            $response = $this->getResponse('POST', '/PutLexicon', $lexicon->toJson());
+            if ($response->getStatusCode() === 200) {
+                return true;
+            }
+        } catch (\Exception $e) {
+            return false;
+        }
     }
 
     /**
+     * Retrieve a lexicon previously stored in the service
+     *
      * @param string $name
+     * @return null|string
      */
     public function getLexicon($name)
     {
-        // TODO: implement
+        try {
+            $response = $this->getResponse('POST', '/GetLexicon', json_encode([
+                'Name' => $name
+            ]));
+            if ($response->getStatusCode() === 200) {
+                return $response->getBody()->getContents();
+            }
+        } catch (\Exception $e) {
+            return null;
+        }
     }
 
     /**
+     * Delete a lexicon previously stored in the service
+     *
      * @param string $name
+     * @return bool
      */
     public function deleteLexicon($name)
     {
-        // TODO: implement
+        try {
+            $response = $this->getResponse('POST', '/DeleteLexicon', json_encode([
+                'Name' => $name
+            ]));
+            if ($response->getStatusCode() === 200) {
+                return true;
+            }
+        } catch (\Exception $e) {
+            return false;
+        }
     }
 
+    /**
+     * Retrieves a list of user-defined lexicons available for speech synthesis
+     *
+     * @return null|string
+     */
     public function listLexicons()
     {
-        // TODO: implement
+        try {
+            $response = $this->getResponse('POST', '/ListLexicons');
+            if ($response->getStatusCode() === 200) {
+                return $response->getBody()->getContents();
+            }
+        } catch (\Exception $e) {
+            return null;
+        }
     }
 
     /**
      * @param string $method
      * @param string $uri
      * @param string $body
-     * @return mixed|\Psr\Http\Message\ResponseInterface
+     * @return \Psr\Http\Message\ResponseInterface
      */
-    private function getResponse($method, $uri, $body)
+    private function getResponse($method, $uri, $body = null)
     {
         $request = $this->createRequest($method, $uri, $body);
 
