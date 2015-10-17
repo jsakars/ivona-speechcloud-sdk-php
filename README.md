@@ -26,6 +26,11 @@ echo $data;
 // ListVoices
 $data = $speechCloud->listVoices(new Voice());
 
+$data = $speechCloud->listVoices(new Voice([
+    Voice::LANGUAGE => 'en-US',
+    Voice::GENDER   => Voice::GENDER_MALE
+])); // Filter American English male voices etc.
+
 // PutLexicon
 $data = $speechCloud->putLexicon(new Lexicon([
     Lexicon::NAME => 'Test',
