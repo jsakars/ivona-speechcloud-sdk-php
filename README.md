@@ -23,6 +23,13 @@ $data = $speechCloud->createSpeech(new Input([
 header('Content-Type: audio/mpeg');
 echo $data; // Audio stream - use it as You please
 
+$data = $speechCloud->createSpeech(new Input([
+    Input::DATA => 'Je Suis Charlie'
+]), new OutputFormat(), new Parameters(), new Voice([
+    Voice::NAME     => 'Celine',
+    Voice::LANGUAGE => 'fr-FR'
+]));
+
 // ListVoices
 $data = $speechCloud->listVoices(new Voice());
 
