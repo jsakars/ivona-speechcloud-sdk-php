@@ -21,7 +21,7 @@ $data = $speechCloud->createSpeech(new Input([
     Input::DATA => 'The word or sentence You want to synthesize'
 ]), new OutputFormat(), new Parameters(), new Voice());
 header('Content-Type: audio/mpeg');
-echo $data;
+echo $data; // Audio stream - use it as You please
 
 // ListVoices
 $data = $speechCloud->listVoices(new Voice());
