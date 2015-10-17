@@ -13,7 +13,7 @@ use Werd\Ivona\Models\Lexicon;
 $speechCloud = new SpeechCloud([
     'access_key' => '<your-key>',
     'secret_key' => '<your-secret-key>',
-    'region'     => '<region>'
+    'region'     => '<region>' // E.g. eu-west-1
 ]);
 
 // CreateSpeech
