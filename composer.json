@@ -2,7 +2,7 @@
     "name": "werd/ivona-speechcloud-sdk-php",
     "type": "library",
     "description": "IVONA SpeechCloud SDK for PHP",
-    "keywords": ["ivona", "speechcloud"],
+    "keywords": ["ivona", "speechcloud", "tts", "text-to-speech"],
     "license": "MIT",
     "authors": [
         {
