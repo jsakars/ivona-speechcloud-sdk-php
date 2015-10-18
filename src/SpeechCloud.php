@@ -132,7 +132,7 @@ class SpeechCloud implements SpeechCloudInterface
     {
         try {
             $response = $this->getResponse('POST', '/GetLexicon', json_encode([
-                'Name' => $name
+                Lexicon::NAME => $name
             ]));
             if ($response->getStatusCode() === 200) {
                 return $response->getBody()->getContents();
@@ -152,7 +152,7 @@ class SpeechCloud implements SpeechCloudInterface
     {
         try {
             $response = $this->getResponse('POST', '/DeleteLexicon', json_encode([
-                'Name' => $name
+                Lexicon::NAME => $name
             ]));
             if ($response->getStatusCode() === 200) {
                 return true;
