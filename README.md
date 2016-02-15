@@ -7,7 +7,7 @@
 ##Installation
 Through [Composer](https://getcomposer.org/):
 ```
-$ composer composer require werd/ivona-speechcloud-sdk-php
+$ composer require werd/ivona-speechcloud-sdk-php
 ```
 
 ## Usage
