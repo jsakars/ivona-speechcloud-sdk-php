@@ -2,6 +2,7 @@
 [IVONA SpeechCloud](https://www.ivona.com/us/for-business/speech-cloud/) SDK for PHP
 
 [![Latest Stable Version](https://poser.pugx.org/werd/ivona-speechcloud-sdk-php/v/stable)](https://packagist.org/packages/werd/ivona-speechcloud-sdk-php)
+[![Dependency Status](https://www.versioneye.com/php/werd:ivona-speechcloud-sdk-php/dev-master/badge)](https://www.versioneye.com/php/werd:ivona-speechcloud-sdk-php/dev-master)
 [![License](https://poser.pugx.org/werd/ivona-speechcloud-sdk-php/license)](https://packagist.org/packages/werd/ivona-speechcloud-sdk-php)
 
 ##Installation
