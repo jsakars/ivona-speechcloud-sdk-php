@@ -55,11 +55,11 @@ $data = $speechCloud->putLexicon(new Lexicon([
 ]));
 
 // GetLexicon
-$data = $this->speechCloud->getLexicon('Test');
+$data = $speechCloud->getLexicon('Test');
 
 // DeleteLexicon
-$data = $this->speechCloud->deleteLexicon('Test');
+$data = $speechCloud->deleteLexicon('Test');
 
 // ListLexicons
-$data = $this->speechCloud->listLexicons();
+$data = $speechCloud->listLexicons();
 ```
