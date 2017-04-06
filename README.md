@@ -5,7 +5,7 @@
 [![Dependency Status](https://www.versioneye.com/php/werd:ivona-speechcloud-sdk-php/dev-master/badge)](https://www.versioneye.com/php/werd:ivona-speechcloud-sdk-php/dev-master)
 [![License](https://poser.pugx.org/werd/ivona-speechcloud-sdk-php/license)](https://packagist.org/packages/werd/ivona-speechcloud-sdk-php)
 
-##Installation
+## Installation
 Through [Composer](https://getcomposer.org/):
 ```
 $ composer require werd/ivona-speechcloud-sdk-php
